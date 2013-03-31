@@ -18,26 +18,27 @@ def add_uniq(seq):
     return c
 
 
-
-for l in link:
-    if not l.string == None:
-        nylinks.append(l['href'])
-
-
-def remove_not_href(seq):
-    for x in seq:
-        # if x.find("http://") == -1:
-        #     try:
-        #         seq.remove(x)
-        #     except ValueError:
-        #         pass
-        if not "http:" in x or "https" in x:
-            seq.remove(x)
+def add_links():
+    global l
+    for l in link:
+        if not l.string == None:
+            nylinks.append(l['href'])
 
 
+add_links()
 
 
-remove_not_href(nylinks)
+def just_http(ll, arg="http"):
+    global x
+    for x in ll:
+        if not x[0:3] == arg:
+            ll.remove(x)
 
-for x in nylinks:
-    print x
+
+just_http(nylinks, arg="http")
+
+
+
+
+
+
