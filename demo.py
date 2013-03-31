@@ -26,8 +26,16 @@ for l in link:
 
 def remove_not_href(seq):
     for x in seq:
-        if x.find("http://") == -1:
+        # if x.find("http://") == -1:
+        #     try:
+        #         seq.remove(x)
+        #     except ValueError:
+        #         pass
+        if not "http:" in x or "https" in x:
             seq.remove(x)
+
+
+
 
 remove_not_href(nylinks)
 
