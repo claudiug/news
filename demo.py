@@ -6,6 +6,7 @@ print soup.title
 link = soup.find_all('a')
 nycontent = []
 nylinks = []
+dd = []
 for l in link:
     if not l.string == None:
         nycontent.append(l.contents)
@@ -36,9 +37,6 @@ def just_http(ll, arg="http"):
 
 
 just_http(nylinks, arg="http")
-
-
-
 
 
 
