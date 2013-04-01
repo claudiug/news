@@ -31,12 +31,15 @@ add_links()
 
 def just_http(ll, arg="http"):
     global x
+    c = []
     for x in ll:
-        if not x[0:3] == arg:
-            ll.remove(x)
+        if  x[0:3] == arg:
+            c.append(x)
+    return c
 
 
-just_http(nylinks, arg="http")
+
+print just_http(nylinks, arg="http")
 
 
 
